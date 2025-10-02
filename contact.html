@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NAVIER YACHTS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation (same as other pages) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images\logo narrow.png" alt="NAVIER YACHTS Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products & Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li class="language-selector">
+                        <a href="#" id="current-lang">EN</a>
+                        <ul class="language-dropdown">
+                            <li><a href="#" data-lang="en">English</a></li>
+                            <li><a href="#" data-lang="zh">中文</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> > Contact Us
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>We're here to answer any questions you might have about our yachts, services, or partnership opportunities.</p>
+            </div>
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:Info@naiveryacht.com">Info@naiveryacht.com</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+9715610188">+971 56-10188</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>Dubai Integrated Economic Zones (DIEZ), Dubai, United Arab Emirates</p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="section-title">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below, and our team will get back to you as soon as possible.</p>
+                </div>
+                <form id="contactForm" action="#" method="post">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <p class="form-note">Your information will be forwarded to INFO@NAIVERYACHT.COM</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+    <!-- Footer content will be dynamically inserted by footer.js -->
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+</body>
+</html>
