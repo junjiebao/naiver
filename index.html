@@ -6,6 +6,141 @@
     <title>NAVIER YACHTS - Navigating Your Maritime Dreams</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 添加轮播必要的CSS样式 */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            height: 80vh;
+        }
+        
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .slide-indicators {
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .indicator.active {
+            background-color: white;
+        }
+        
+        .prev-slide, .next-slide {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .prev-slide:hover, .next-slide:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn {
+            background-color: #1a73e8;
+            color: white;
+        }
+        
+        .primary-btn:hover {
+            background-color: #0d5bba;
+        }
+        
+        .secondary-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .secondary-btn:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -44,12 +179,10 @@
         <div class="hero-slider">
             <!-- Slide 1: Luxury Yacht -->
             <div class="hero-slide active">
+                <img src="images\Yachts\60ft catamaran.jpg" alt="Luxury Yacht">
                 <div class="hero-content">
                     <h1>Navigating Your Maritime Dreams</h1>
                     <p>Premier yacht and recreational boat solutions in the UAE</p>
-                    <div style="text-align: center; margin: 20px 0;">
-                        <img src="images/38FT/starboard side.JPG" alt="Luxury Yacht" style="width: 50%; height: auto;">
-                    </div>
                     <div class="hero-buttons">
                         <a href="products.html" class="btn primary-btn">Explore Our Fleet</a>
                         <a href="contact.html" class="btn secondary-btn">Contact Us</a>
@@ -71,12 +204,24 @@
             
             <!-- Slide 3: SnakeHead -->
             <div class="hero-slide">
-                <img src="images/SnakeHead/snakehead-boat.jpg" alt="SnakeHead Boats">
+                <img src="images\Snakehead\2300\snakehead 2300 small.png" alt="SnakeHead Boats">
                 <div class="hero-content">
                     <h1>SnakeHead Brand</h1>
-                    <p>Professional and reliable boats for all your needs</p>
+                    <p>Professional and reliable patrol boats for all Marine Security needs</p>
                     <div class="hero-buttons">
                         <a href="products.html#snakehead" class="btn primary-btn">Explore SnakeHead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Luxury Yacht -->
+            <div class="hero-slide">
+                <img src="images\Yachts\moana 80 cat.jpg" alt="Luxury Yacht">
+                <div class="hero-content">
+                    <h1>Super Size Catamaran 80ft</h1>
+                    <p>Blue water long range catamaran</p>
+                    <div class="hero-buttons">
+                        <a href="products.html#Ayana" class="btn primary-btn">Explore</a>
                     </div>
                 </div>
             </div>
@@ -89,12 +234,13 @@
                 <span class="indicator active" data-slide="0"></span>
                 <span class="indicator" data-slide="1"></span>
                 <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
             </div>
             <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
                     
-                    <!-- Footer section -->
+    <!-- Footer section -->
     <footer>
         <!-- Footer content will be dynamically inserted by footer.js -->
     </footer>
@@ -102,5 +248,78 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showSlide(index) {
+                // 添加过渡效果前的检查
+                if (index >= slides.length) index = 0;
+                if (index < 0) index = slides.length - 1;
+                
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Event listeners for navigation
+            nextBtn.addEventListener('click', function() {
+                resetAutoSlide();
+                let newIndex = (currentSlide + 1) % slides.length;
+                showSlide(newIndex);
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                resetAutoSlide();
+                let newIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(newIndex);
+            });
+            
+            // Event listeners for indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    resetAutoSlide();
+                    showSlide(index);
+                });
+            });
+            
+            // Auto-slide every 5 seconds
+            function startAutoSlide() {
+                slideInterval = setInterval(function() {
+                    let newIndex = (currentSlide + 1) % slides.length;
+                    showSlide(newIndex);
+                }, 5000);
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(slideInterval);
+                startAutoSlide();
+            }
+            
+            // Start the auto-slide
+            startAutoSlide();
+            
+            // 添加键盘导航支持
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    resetAutoSlide();
+                    let newIndex = (currentSlide + 1) % slides.length;
+                    showSlide(newIndex);
+                } else if (e.key === 'ArrowLeft') {
+                    resetAutoSlide();
+                    let newIndex = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(newIndex);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
