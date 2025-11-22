@@ -25,6 +25,468 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Projects Page Enhanced Styling - Based on News Design */
+        .projects-content {
+            padding: 50px 0;
+        }
+        
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #1a73e8;
+            background: white;
+            color: #1a73e8;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .filter-btn:hover {
+            background: #1a73e8;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+        
+        .filter-btn.active {
+            background: #1a73e8;
+            color: white;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+        
+        /* Featured Project Item */
+        .large-project-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        .large-project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .large-project-item .project-image {
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+        }
+        
+        .large-project-item .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .large-project-item:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-date {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d5bba 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+            min-width: 80px;
+        }
+        
+        .project-date .day {
+            display: block;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .project-date .month {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-date .year {
+            display: block;
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        .large-project-item .project-details {
+            padding: 40px;
+        }
+        
+        .large-project-item .project-details h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .project-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .project-meta span i {
+            color: #1a73e8;
+            font-size: 16px;
+        }
+        
+        .large-project-item .project-details p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d5bba 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+        
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+        }
+        
+        .read-more::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+        
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card .project-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .project-card .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-card .project-date {
+            top: 15px;
+            left: 15px;
+            padding: 12px;
+            min-width: 70px;
+        }
+        
+        .project-card .project-date .day {
+            font-size: 26px;
+        }
+        
+        .project-card .project-date .month {
+            font-size: 12px;
+        }
+        
+        .project-card .project-details {
+            padding: 25px;
+        }
+        
+        .project-card .project-details h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .project-card .project-details p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        /* Full Project Article Section */
+        .full-project-article {
+            display: none; /* Hidden by default */
+            margin-top: 50px;
+            padding: 50px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .full-project-article.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close-project-article {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .close-project-article:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .full-project-article h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 15px;
+        }
+        
+        .project-article-meta {
+            color: #666;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .project-article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-article-meta span i {
+            color: #1a73e8;
+        }
+        
+        .project-article-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .project-article-images img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-article-images img:hover {
+            transform: scale(1.02);
+        }
+        
+        .project-article-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #444;
+        }
+        
+        .project-article-content h3 {
+            color: #1a73e8;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-article-content h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d5bba 100%);
+            border-radius: 2px;
+        }
+        
+        .project-article-content h4 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .project-article-content ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .project-article-content ul li {
+            margin-bottom: 10px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .project-article-content ul li::marker {
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        
+        .project-article-content > div {
+            margin-top: 30px;
+            padding: 25px;
+            background: white;
+            border-left: 4px solid #1a73e8;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn.primary-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d5bba 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        }
+        
+        .btn.primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(26, 115, 232, 0.4);
+        }
+        
+        .btn.secondary-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: transparent;
+            color: #1a73e8;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 2px solid #1a73e8;
+            margin-left: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn.secondary-btn:hover {
+            background: #1a73e8;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(26, 115, 232, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .project-article-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .full-project-article {
+                padding: 30px 20px;
+            }
+            
+            .full-project-article h2 {
+                font-size: 28px;
+            }
+            
+            .btn.secondary-btn {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation (same as other pages) -->
@@ -68,108 +530,531 @@
         </div>
     </section>
 
-    <!-- Projects Overview -->
-    <section class="projects-overview">
+    <!-- Projects Content -->
+    <section class="projects-content">
         <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Explore our successfully delivered yacht imports, recreational boat deliveries, and manufacturing collaborations.</p>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="export">Export Projects</button>
+                <button class="filter-btn" data-filter="yacht">Yacht Projects</button>
+                <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+                <button class="filter-btn" data-filter="partnership">Partnerships</button>
+            </div>
+            
+            <!-- Featured Project - Latest or Most Important -->
+            <div class="large-project-item" data-category="yacht">
+                <div class="project-image">
+                    <img src="images\38FT\building.JPG" alt="TideMaster Cat 38 Custom Build - Dubai Luxury Catamaran Project" loading="eager">
+                    <div class="project-date">
+                        <span class="day">05</span>
+                        <span class="month">Nov</span>
+                        <span class="year">2025</span>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h2>TideMaster Cat 38 - Dubai Luxury Catamaran Completed</h2>
+                    <div class="project-meta">
+                        <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                    </div>
+                    <p>Flagship TideMaster Cat 38 luxury catamaran completed and ready for Dubai delivery. 38-foot aluminum catamaran with twin engines, luxury cabin, and advanced navigation systems for premium UAE waters.</p>
+                    <a href="#" class="read-more" data-project="tidemaster-cat38">View Project Details</a>
+                </div>
             </div>
             
             <div class="project-grid">
                 <!-- Export Projects -->
-                <div class="project-card">
+                <div class="project-card" data-category="export">
                     <div class="project-image">
-                        <img src="images\18FT\Image_20251002200926_5_160.jpg" alt="18FT fishing boat design">
+                        <img src="images\18FT\Image_20251002200926_5_160.jpg" alt="18FT fishing boat design" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">15</span>
+                            <span class="day">Mar</span>
+                            <span class="year">2023</span>
+                        </div>
                     </div>
                     <div class="project-details">
-                        <h3>18FT fishing boat desig</h3>
+                        <h3>18FT Fishing Boat Design</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> March 2023</span>
-                            <span><i class="fas fa-tag"></i> Yacht Import</span>
+                            <span><i class="fas fa-folder"></i> Export Projects</span>
+                            <span><i class="fas fa-map-marker-alt"></i> International</span>
                         </div>
                         <p>Compact and nimble, perfect for day trips and fishing excursions. Ideal for small groups and families exploring coastal waters.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="18ft-fishing">View Project Details</a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="export">
                     <div class="project-image">
-                        <img src="images\Yachts\Malaysia patrol boat.JPG" alt="Patrol boat export">
+                        <img src="images\Yachts\Malaysia patrol boat.JPG" alt="Patrol boat export" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">20</span>
+                            <span class="month">Jan</span>
+                            <span class="year">2023</span>
+                        </div>
                     </div>
                     <div class="project-details">
-                        <h3>Patrol Boat Delivery</h3>
+                        <h3>Malaysia Patrol Boat Delivery</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 2023</span>
-                            <span><i class="fas fa-tag"></i> Patrol boat export</span>
+                            <span><i class="fas fa-folder"></i> Export Projects</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Malaysia</span>
                         </div>
                         <p>Exported and customized a 36ft Patrol Boat for Malaysia coast guard, featuring custom interior finishes and upgraded navigation systems.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="malaysia-patrol">View Project Details</a>
                     </div>
                 </div>
                 
                 <!-- Yacht Projects -->
-                <div class="project-card">
+                <div class="project-card" data-category="yacht">
                     <div class="project-image">
-                        <img src="images\Yachts\60ft catamaran.jpg" alt="60ft aluminum catamaran">
+                        <img src="images\Yachts\60ft catamaran.jpg" alt="60ft aluminum catamaran" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">10</span>
+                            <span class="month">Apr</span>
+                            <span class="year">2024</span>
+                        </div>
                     </div>
                     <div class="project-details">
-                        <h3>60ft aluminum catamaran</h3>
+                        <h3>60ft Luxury Catamaran</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> April 2024</span>
-                            <span><i class="fas fa-tag"></i> Recreational Yacht</span>
+                            <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
                         </div>
                         <p>Building a luxury 60ft catamaran for a tourist operator, customized for tourist excursions and water activities.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="60ft-catamaran">View Project Details</a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="yacht">
                     <div class="project-image">
-                        <img src="images\38FT\building.JPG" alt="TideMaster 38 Fisher Version">
+                        <img src="images\38FT\building.JPG" alt="TideMaster 38 Fisher Version" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">01</span>
+                            <span class="month">Feb</span>
+                            <span class="year">2025</span>
+                        </div>
                     </div>
                     <div class="project-details">
                         <h3>TideMaster Fisher Custom Build</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> February 2025</span>
-                            <span><i class="fas fa-tag"></i> Recreational Boats</span>
+                            <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                            <span><i class="fas fa-tools"></i> Manufacturing</span>
                         </div>
                         <p>Custom-built TideMaster Fisher model with enhanced fishing equipment and specialized navigation systems for a sport fishing charter company.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="tidemaster-fisher">View Project Details</a>
                     </div>
                 </div>
                 
                 <!-- Manufacturing Partnership Projects -->
-                <div class="project-card">
+                <div class="project-card" data-category="manufacturing">
                     <div class="project-image">
-                        <img src="images\Yachts\dubai yacht show credit Gulf Craft.webp" alt="Shipyard Consultation">
+                        <img src="images\Yachts\dubai yacht show credit Gulf Craft.webp" alt="Shipyard Consultation" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">01</span>
+                            <span class="month">Ongoing</span>
+                            <span class="year">2025</span>
+                        </div>
                     </div>
                     <div class="project-details">
                         <h3>Shipyard Consultation Project</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> Ongoing</span>
-                            <span><i class="fas fa-tag"></i> Manufacturing Partnership</span>
+                            <span><i class="fas fa-folder"></i> Manufacturing</span>
+                            <span><i class="fas fa-handshake"></i> Partnership</span>
                         </div>
                         <p>Providing ongoing consultancy services to a Chinese shipyard establishing production facilities in the UAE, including regulatory guidance and market analysis.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="shipyard-consultation">View Project Details</a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="partnership">
                     <div class="project-image">
-                        <img src="images\Snakehead\IMG_2122.jpg" alt="Localized Production">
+                        <img src="images\Snakehead\IMG_2122.jpg" alt="Localized Production" loading="lazy">
+                        <div class="project-date">
+                            <span class="day">15</span>
+                            <span class="month">Jun</span>
+                            <span class="year">2023</span>
+                        </div>
                     </div>
                     <div class="project-details">
                         <h3>Localized Production Initiative</h3>
                         <div class="project-meta">
-                            <span><i class="fas fa-calendar-alt"></i> June 2023</span>
-                            <span><i class="fas fa-tag"></i> Manufacturing Partnership</span>
+                            <span><i class="fas fa-folder"></i> Partnerships</span>
+                            <span><i class="fas fa-industry"></i> Local Manufacturing</span>
                         </div>
                         <p>Facilitating local production of aluminum boat components in Dubai, creating jobs and reducing import costs for our TideMaster brand.</p>
-                        <a href="#" class="read-more">View Project Details</a>
+                        <a href="#" class="read-more" data-project="local-production">View Project Details</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Full Project Article Sections -->
+            
+            <!-- Article 0: TideMaster Cat 38 - Featured Project -->
+            <section id="tidemaster-cat38" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>TideMaster Cat 38 - Dubai Luxury Catamaran Completed</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> November 5, 2025</span>
+                        <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\38FT\building.JPG" alt="TideMaster Cat 38 Construction - Dubai Luxury Catamaran" loading="lazy">
+                        <img src="images\38FT\Cat 38 ready.JPG" alt="TideMaster Cat 38 Completed - Ready for Dubai Delivery" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Dubai, UAE</strong> — NAVIER YACHTS is proud to announce the successful completion of our flagship TideMaster Cat 38 luxury catamaran. This state-of-the-art vessel represents the pinnacle of our engineering excellence and is now ready for delivery to its Dubai-based client.</p>
+                        
+                        <h3>Engineering Excellence</h3>
+                        <p>The TideMaster Cat 38 combines cutting-edge marine technology with luxurious comfort. Every aspect of this 38-foot catamaran has been meticulously designed and crafted to deliver exceptional performance, stability, and comfort in the Arabian Gulf waters.</p>
+                        
+                        <h3>Key Features and Specifications</h3>
+                        <ul>
+                            <li><strong>Length Overall:</strong> 38 feet (11.6 meters)</li>
+                            <li><strong>Beam:</strong> Wide catamaran design for maximum stability</li>
+                            <li><strong>Hull Construction:</strong> Marine-grade aluminum for durability and performance</li>
+                            <li><strong>Propulsion:</strong> Twin outboard engines for superior maneuverability</li>
+                            <li><strong>Fuel Capacity:</strong> Extended range for long-distance cruising</li>
+                            <li><strong>Accommodation:</strong> Luxury cabin with modern amenities</li>
+                            <li><strong>Navigation Systems:</strong> Latest GPS, radar, and fish-finding equipment</li>
+                            <li><strong>Safety Features:</strong> Comprehensive safety equipment exceeding international standards</li>
+                        </ul>
+                        
+                        <h3>Performance Characteristics</h3>
+                        <p>The catamaran hull design provides exceptional stability in various sea conditions, making it ideal for both leisure cruising and fishing expeditions. The wide beam ensures comfortable living space while maintaining excellent performance characteristics.</p>
+                        
+                        <h3>Luxury and Comfort</h3>
+                        <p>The interior features premium finishes, spacious seating areas, and modern galley facilities. Large windows provide panoramic views and excellent natural lighting throughout the cabin.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-ship" style="color: #1a73e8; margin-right: 10px;"></i>Project Information</h4>
+                            <p><strong>Completion Date:</strong> November 5, 2025</p>
+                            <p><strong>Destination:</strong> Dubai, UAE</p>
+                            <p><strong>Vessel Type:</strong> TideMaster Cat 38 Luxury Catamaran</p>
+                            <p><strong>Client:</strong> Private Dubai Owner</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="products.html#tidemaster" class="btn primary-btn"><i class="fas fa-ship" style="margin-right: 8px;"></i>View TideMaster Series</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Inquire About Custom Builds</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 1: 18FT Fishing Boat -->
+            <section id="18ft-fishing" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>18FT Fishing Boat - Compact Design Excellence</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> March 15, 2023</span>
+                        <span><i class="fas fa-folder"></i> Export Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-globe"></i> International</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\18FT\Image_20251002200926_5_160.jpg" alt="18FT Fishing Boat Design - Compact Aluminum Vessel" loading="lazy">
+                        <img src="images\18FT\Image_20251002200926_5_160.jpg" alt="18FT Fishing Boat Interior - Efficient Layout" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Manufacturing Facility</strong> — This compact 18FT fishing boat showcases our ability to deliver high-quality vessels in smaller sizes without compromising on functionality or safety. Perfect for day trips and recreational fishing in coastal waters.</p>
+                        
+                        <h3>Design Philosophy</h3>
+                        <p>The 18FT design focuses on maximizing utility in a compact footprint. Every inch of space has been optimized for practical use, making it ideal for solo fishermen or small groups.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Length:</strong> 18 feet (5.5 meters)</li>
+                            <li><strong>Hull Material:</strong> Marine-grade aluminum alloy</li>
+                            <li><strong>Construction:</strong> Precision welded for durability</li>
+                            <li><strong>Engine Options:</strong> Single outboard configuration</li>
+                            <li><strong>Fuel Capacity:</strong> Efficient fuel system for day trips</li>
+                            <li><strong>Seating:</strong> Comfortable seating for 4-6 persons</li>
+                            <li><strong>Storage:</strong> Smart storage solutions</li>
+                        </ul>
+                        
+                        <h3>Ideal Use Cases</h3>
+                        <p>This vessel is perfect for recreational fishing, family day trips, and coastal exploration. Its shallow draft allows access to areas larger boats cannot reach.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-fish" style="color: #1a73e8; margin-right: 10px;"></i>Target Applications</h4>
+                            <p><strong>Primary Use:</strong> Recreational Fishing</p>
+                            <p><strong>Secondary Use:</strong> Family Cruising</p>
+                            <p><strong>Market:</strong> Export to International Markets</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="products.html" class="btn primary-btn"><i class="fas fa-anchor" style="margin-right: 8px;"></i>View All Boat Models</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-comments" style="margin-right: 8px;"></i>Custom Design Consultation</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 2: Malaysia Patrol Boat -->
+            <section id="malaysia-patrol" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>Malaysia Coast Guard Patrol Boat - Government Export Success</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> January 20, 2023</span>
+                        <span><i class="fas fa-folder"></i> Export Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Malaysia</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\Yachts\Malaysia patrol boat.JPG" alt="Malaysia Coast Guard Patrol Boat - High Speed Vessel" loading="lazy">
+                        <img src="images\Snakehead\IMG_1813.JPG" alt="Malaysia Patrol Boat Commissioning - Maritime Security" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Malaysia</strong> — NAVIER YACHTS successfully delivered and customized a 36ft Patrol Boat for the Malaysia Coast Guard. This project demonstrates our capability to meet stringent government specifications and deliver professional-grade vessels for maritime security operations.</p>
+                        
+                        <h3>Government Specification Requirements</h3>
+                        <p>The Malaysia Coast Guard vessel was built to exacting military specifications, incorporating advanced features for law enforcement and maritime patrol operations.</p>
+                        
+                        <h3>Key Specifications</h3>
+                        <ul>
+                            <li><strong>Length:</strong> 36 feet (11 meters)</li>
+                            <li><strong>Hull Construction:</strong> Reinforced aluminum armor plating</li>
+                            <li><strong>Engine:</strong> High-performance twin engines</li>
+                            <li><strong>Speed:</strong> 40+ knots maximum capability</li>
+                            <li><strong>Navigation:</strong> Advanced military-grade systems</li>
+                            <li><strong>Communication:</strong> Secure encrypted radio systems</li>
+                            <li><strong>Safety:</strong> Enhanced armor and ballistic protection</li>
+                        </ul>
+                        
+                        <h3>Custom Modifications</h3>
+                        <p>The vessel was extensively modified to meet Malaysia Coast Guard requirements, including specialized boarding equipment, surveillance systems, and crew accommodation features.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-shield-alt" style="color: #1a73e8; margin-right: 10px;"></i>Project Achievement</h4>
+                            <p><strong>Delivery Status:</strong> Successfully Commissioned</p>
+                            <p><strong>Client:</strong> Malaysia Coast Guard</p>
+                            <p><strong>Impact:</strong> Enhanced maritime security capabilities</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="products.html#Patrol" class="btn primary-btn"><i class="fas fa-ship" style="margin-right: 8px;"></i>View Patrol Boat Series</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-handshake" style="margin-right: 8px;"></i>Government Contracts</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 3: 60ft Catamaran -->
+            <section id="60ft-catamaran" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>60ft Luxury Catamaran - Dubai Tourism Operator</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> April 10, 2024</span>
+                        <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\Yachts\60ft catamaran.jpg" alt="60ft Luxury Catamaran - Dubai Tourism" loading="lazy">
+                        <img src="images\Yachts\60ft catamaran.jpg" alt="60ft Catamaran Interior - Tourist Operations" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Dubai, UAE</strong> — Currently under construction, this 60ft luxury catamaran represents our most ambitious tourism vessel project to date. Designed specifically for a Dubai-based tourist operator, it combines luxury with commercial functionality.</p>
+                        
+                        <h3>Tourism-Specific Design</h3>
+                        <p>This vessel is engineered for high-volume tourist operations while maintaining luxury standards. The design prioritizes passenger comfort, safety, and operational efficiency.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Length:</strong> 60 feet (18.3 meters)</li>
+                            <li><strong>Capacity:</strong> Up to 50 passengers</li>
+                            <li><strong>Decks:</strong> Multi-level passenger areas</li>
+                            <li><strong>Facilities:</strong> Tour guide equipment, refreshment stations</li>
+                            <li><strong>Safety:</strong> Commercial-grade safety systems</li>
+                            <li><strong>Accessibility:</strong> Disabled access features</li>
+                            <li><strong>Entertainment:</strong> Audio-visual systems</li>
+                        </ul>
+                        
+                        <h3>Operational Capabilities</h3>
+                        <p>Designed for Dubai's tourism market, this catamaran will offer various tours including sightseeing cruises, sunset dinners, and water sports excursions.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-route" style="color: #1a73e8; margin-right: 10px;"></i>Tourism Operations</h4>
+                            <p><strong>Target Routes:</strong> Dubai Marina, Palm Jumeirah</p>
+                            <p><strong>Service Type:</strong> Luxury Tourist Cruises</p>
+                            <p><strong>Expected Launch:</strong> Late 2024</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="products.html" class="btn primary-btn"><i class="fas fa-anchor" style="margin-right: 8px;"></i>View Tourism Vessels</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-tourism" style="margin-right: 8px;"></i>Tourism Fleet Solutions</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 4: TideMaster Fisher -->
+            <section id="tidemaster-fisher" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>TideMaster Fisher Custom Build - Sport Fishing Charter</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> February 1, 2025</span>
+                        <span><i class="fas fa-folder"></i> Yacht Projects</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-fish"></i> Sport Fishing</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\38FT\building.JPG" alt="TideMaster Fisher Custom Build - Sport Fishing Boat" loading="lazy">
+                        <img src="images\38FT\building.JPG" alt="TideMaster Fisher Fishing Equipment Setup" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Manufacturing Facility</strong> — A specialized TideMaster Fisher model is being custom-built for a professional sport fishing charter company. This vessel combines commercial fishing capabilities with premium comfort for charter clients.</p>
+                        
+                        <h3>Sport Fishing Specialization</h3>
+                        <p>This custom TideMaster Fisher incorporates professional-grade fishing equipment while maintaining luxury amenities for high-end charter operations in the Arabian Gulf.</p>
+                        
+                        <h3>Fishing Features</h3>
+                        <ul>
+                            <li><strong>Outriggers:</strong> Professional tournament-grade setup</li>
+                            <li><strong>Fish Finders:</strong> Advanced sonar and mapping systems</li>
+                            <li><strong>Livewells:</strong> Multiple bait storage systems</li>
+                            <li><strong>Fighting Chairs:</strong> Heavy-duty tournament equipment</li>
+                            <li><strong>Rod Holders:</strong> Extensive rod storage and deployment</li>
+                            <li><strong>Cooler Systems:</strong> Large-capacity fish storage</li>
+                        </ul>
+                        
+                        <h3>Luxury Charter Amenities</h3>
+                        <p>Despite its fishing focus, the vessel includes premium features for charter clients, including comfortable seating, refreshment facilities, and climate control.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-anchor" style="color: #1a73e8; margin-right: 10px;"></i>Charter Operations</h4>
+                            <p><strong>Service:</strong> Sport Fishing Charter</p>
+                            <p><strong>Location:</strong> Arabian Gulf Operations</p>
+                            <p><strong>Capacity:</strong> 6-8 anglers + crew</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="products.html#tidemaster" class="btn primary-btn"><i class="fas fa-fish" style="margin-right: 8px;"></i>View Fisher Models</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-ship" style="margin-right: 8px;"></i>Custom Charter Vessels</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 5: Shipyard Consultation -->
+            <section id="shipyard-consultation" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>Shipyard Consultation Project - Chinese Partnership</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Ongoing 2025</span>
+                        <span><i class="fas fa-folder"></i> Manufacturing</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-handshake"></i> Partnership</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\Yachts\dubai yacht show credit Gulf Craft.webp" alt="Shipyard Consultation Dubai - Manufacturing Partnership" loading="lazy">
+                        <img src="images\Snakehead\IMG_2122.jpg" alt="Manufacturing Facility Setup - Production Line" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Dubai, UAE</strong> — NAVIER YACHTS is providing comprehensive consultancy services to a major Chinese shipyard establishing production facilities in the UAE. This ongoing project represents a significant international partnership in marine manufacturing.</p>
+                        
+                        <h3>Consultation Scope</h3>
+                        <p>Our consultancy covers all aspects of shipyard establishment, from regulatory compliance to production optimization and market integration.</p>
+                        
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><strong>Regulatory Guidance:</strong> UAE maritime regulations compliance</li>
+                            <li><strong>Facility Planning:</strong> Production line optimization</li>
+                            <li><strong>Technology Transfer:</strong> Manufacturing process implementation</li>
+                            <li><strong>Quality Systems:</strong> International standards certification</li>
+                            <li><strong>Market Analysis:</strong> Regional marine industry insights</li>
+                            <li><strong>Staff Training:</strong> Technical skills development</li>
+                        </ul>
+                        
+                        <h3>Partnership Benefits</h3>
+                        <p>This collaboration enhances UAE's marine manufacturing capabilities while creating jobs and technology transfer opportunities.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-industry" style="color: #1a73e8; margin-right: 10px;"></i>Project Impact</h4>
+                            <p><strong>Partner:</strong> Major Chinese Shipyard</p>
+                            <p><strong>Location:</strong> Dubai Industrial City</p>
+                            <p><strong>Status:</strong> Active Ongoing Partnership</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="about.html" class="btn primary-btn"><i class="fas fa-building" style="margin-right: 8px;"></i>Learn About Our Expertise</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-briefcase" style="margin-right: 8px;"></i>Consultation Services</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Article 6: Local Production -->
+            <section id="local-production" class="full-project-article">
+                <div class="container">
+                    <button class="close-project-article" onclick="closeProjectArticle()"><i class="fas fa-times"></i> Close Article</button>
+                    <h2>Localized Production Initiative - Dubai Manufacturing</h2>
+                    <div class="project-article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> June 15, 2023</span>
+                        <span><i class="fas fa-folder"></i> Partnerships</span>
+                        <span><i class="fas fa-user"></i> NAVIER YACHTS</span>
+                        <span><i class="fas fa-industry"></i> Local Manufacturing</span>
+                    </div>
+                    
+                    <div class="project-article-images">
+                        <img src="images\Snakehead\IMG_2122.jpg" alt="Localized Production Dubai - Manufacturing Setup" loading="lazy">
+                        <img src="images\Snakehead\IMG_2122.jpg" alt="Aluminum Boat Components Dubai Production" loading="lazy">
+                    </div>
+                    
+                    <div class="project-article-content">
+                        <p><strong>Dubai, UAE</strong> — NAVIER YACHTS has successfully initiated local production of aluminum boat components in Dubai. This strategic initiative reduces import costs, creates local jobs, and improves supply chain efficiency for our TideMaster brand.</p>
+                        
+                        <h3>Strategic Importance</h3>
+                        <p>Local production aligns with UAE's industrialization goals while providing significant business advantages including cost reduction, faster delivery times, and better quality control.</p>
+                        
+                        <h3>Production Capabilities</h3>
+                        <ul>
+                            <li><strong>Aluminum Fabrication:</strong> Precision cutting and welding</li>
+                            <li><strong>Component Manufacturing:</strong> Hull sections, decks, superstructures</li>
+                            <li><strong>Quality Control:</strong> International standards compliance</li>
+                            <li><strong>Logistics:</strong> Integrated supply chain management</li>
+                            <li><strong>Innovation:</strong> Advanced manufacturing technology</li>
+                        </ul>
+                        
+                        <h3>Economic Impact</h3>
+                        <p>This initiative creates skilled job opportunities in Dubai's marine manufacturing sector and contributes to the UAE's vision for industrial diversification.</p>
+                        
+                        <div>
+                            <h4><i class="fas fa-chart-line" style="color: #1a73e8; margin-right: 10px;"></i>Project Metrics</h4>
+                            <p><strong>Location:</strong> Dubai Industrial City</p>
+                            <p><strong>Capacity:</strong> Expanding Production Lines</p>
+                            <p><strong>Status:</strong> Operational and Growing</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="about.html" class="btn primary-btn"><i class="fas fa-award" style="margin-right: 8px;"></i>Our Manufacturing Excellence</a>
+                        <a href="contact.html" class="btn secondary-btn"><i class="fas fa-handshake" style="margin-right: 8px;"></i>Partnership Opportunities</a>
+                    </div>
+                </div>
+            </section>
+            
         </div>
     </section>
 
@@ -286,5 +1171,118 @@
 
     <script src="js/main.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+        // Project article expand/collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all "Read More" buttons
+            const readMoreButtons = document.querySelectorAll('.read-more');
+            
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide all articles first
+                    const allArticles = document.querySelectorAll('.full-project-article');
+                    allArticles.forEach(article => {
+                        article.classList.remove('active');
+                    });
+                    
+                    // Get the project ID from data attribute
+                    const projectId = this.getAttribute('data-project');
+                    const article = document.getElementById(projectId);
+                    
+                    if (article) {
+                        // Show the selected article
+                        article.classList.add('active');
+                        
+                        // Smooth scroll to the article
+                        setTimeout(() => {
+                            article.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start' 
+                            });
+                        }, 100);
+                    }
+                });
+            });
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const largeProjectItem = document.querySelector('.large-project-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide project cards based on filter
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            // Add animation
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                    
+                    // Show/hide large project item
+                    if (largeProjectItem) {
+                        const largeCategory = largeProjectItem.getAttribute('data-category');
+                        if (filter === 'all' || largeCategory === filter) {
+                            largeProjectItem.style.display = 'block';
+                            setTimeout(() => {
+                                largeProjectItem.style.opacity = '1';
+                                largeProjectItem.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            largeProjectItem.style.opacity = '0';
+                            largeProjectItem.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                largeProjectItem.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+            
+            // Add transition styles
+            projectCards.forEach(card => {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            });
+            if (largeProjectItem) {
+                largeProjectItem.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            }
+        });
+        
+        // Close project article function
+        function closeProjectArticle() {
+            const allArticles = document.querySelectorAll('.full-project-article');
+            allArticles.forEach(article => {
+                article.classList.remove('active');
+            });
+            
+            // Scroll back to project grid
+            const projectGrid = document.querySelector('.project-grid');
+            if (projectGrid) {
+                projectGrid.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }
+    </script>
 </body>
 </html>
