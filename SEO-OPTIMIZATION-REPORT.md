@@ -93,7 +93,7 @@
 
 #### 所有页面标题:
 1. **首页**: "NAVIER YACHTS - Premier Yacht & Recreational Boat Solutions in UAE Dubai"
-2. **关于**: "About Us - NAVIER YACHTS | Dubai Yacht & Boat Provider"
+2. **经销商**: "DEALER | Yacht Dealership Application | Become a NAVIER YACHTS Dealer"
 3. **产品**: "Products & Services - Yachts & Boats for Sale | NAVIER YACHTS Dubai"
 4. **项目**: "Projects - Yacht & Boat Portfolio | NAVIER YACHTS Dubai"
 5. **新闻**: "News & Events - Latest Updates | NAVIER YACHTS Dubai"

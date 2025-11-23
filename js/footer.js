@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h4>Quick Links</h4>
                 <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">DEALER</a></li>
                 <li><a href="products.html">Products & Services</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="news.html">News & Events</a></li>
