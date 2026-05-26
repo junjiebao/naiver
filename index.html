@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+971-50-665-7695",
+        "telephone": "+971585088518",
         "email": "info@naiveryacht.com",
         "contactType": "sales",
         "areaServed": ["AE", "OM", "SA", "QA", "KW", "BH"],
@@ -68,181 +68,19 @@
     
     <title>Dubai Fishing Boats & Yacht Charters | TideMaster Catamarans | NAVIER YACHTS UAE</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* 添加轮播必要的CSS样式 */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            height: 80vh;
-        }
-        
-        .hero-slider {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-slide.active {
-            opacity: 1;
-        }
-        
-        .hero-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        
-        .hero-content {
-            text-align: center;
-            color: white;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-        
-        .slider-nav {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-        }
-        
-        .slide-indicators {
-            display: flex;
-            gap: 10px;
-            margin: 0 20px;
-        }
-        
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .indicator.active {
-            background-color: white;
-        }
-        
-        .prev-slide, .next-slide {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-        
-        .prev-slide:hover, .next-slide:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .hero-buttons {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .primary-btn {
-            background-color: #1a73e8;
-            color: white;
-        }
-        
-        .primary-btn:hover {
-            background-color: #0d5bba;
-        }
-        
-        .secondary-btn {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .secondary-btn:hover {
-            background-color: white;
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo0rl5JkMZr6Vj+6kDk1h2Xqk3yPIZsS1U7U8BvdpN4BDBVNnGnftF1/x/l9XyDS3GTf5pu0N/bsAunHs+1N6Q==" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo narrow.png" alt="NAVIER YACHTS Logo">
-                </a>
-            </div>
-            <nav>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">DEALER</a></li>
-                    <li><a href="products.html">Products & Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="news.html">News & Events</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li class="language-selector">
-                        <a href="#" id="current-lang">EN</a>
-                        <ul class="language-dropdown">
-                            <li><a href="#" data-lang="en">English</a></li>
-                            <li><a href="#" data-lang="zh">中文</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header & Navigation (dynamically inserted by header.js) -->
+    <header></header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-slider">
             <!-- Slide 1: Luxury Yacht -->
             <div class="hero-slide active">
-                <img src="images\Yachts\60ft catamaran.jpg" alt="Luxury 60ft catamaran yacht for sale Dubai UAE - NAVIER YACHTS" loading="eager">
+                <img src="images/Yachts\60ft catamaran.jpg" alt="Luxury 60ft catamaran yacht for sale Dubai UAE - NAVIER YACHTS" loading="eager">
                 <div class="hero-content">
                     <h1>Navigating Your Maritime Dreams</h1>
                     <p>Premier yacht and recreational boat solutions in the UAE</p>
@@ -267,7 +105,7 @@
             
             <!-- Slide 3: SnakeHead -->
             <div class="hero-slide">
-                <img src="images\Snakehead\2300\snakehead 2300 small.png" alt="SnakeHead 2300 patrol boat for maritime security UAE" loading="lazy">
+                <img src="images/Snakehead\2300\snakehead 2300 small.png" alt="SnakeHead 2300 patrol boat for maritime security UAE" loading="lazy">
                 <div class="hero-content">
                     <h2>SnakeHead Brand</h2>
                     <p>Professional and reliable patrol boats for all Marine Security needs</p>
@@ -279,7 +117,7 @@
 
             <!-- Slide 4: 42ft Hybrid Yacht -->
             <div class="hero-slide">
-                <img src="images\42FT\42FT.png" alt="42ft hybrid power yacht new energy catamaran Dubai UAE" loading="lazy">
+                <img src="images/42FT\42FT.png" alt="42ft hybrid power yacht new energy catamaran Dubai UAE" loading="lazy">
                 <div class="hero-content">
                     <h2>42ft Hybrid Power Yacht</h2>
                     <p>New Energy Hybrid Catamaran - The Future of Sustainable Yachting</p>
@@ -308,35 +146,8 @@
         <!-- Footer content will be dynamically inserted by footer.js -->
     </footer>
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "NAVIER YACHTS FZCO",
-      "url": "https://naiveryacht.com",
-      "logo": "https://naiveryacht.com/images/logo narrow.png",
-      "description": "Premier yacht, fishing boat, and aluminum catamaran manufacturer in Dubai UAE. Specializing in TideMaster fishing boats, yacht charters, boat rentals, deep sea fishing, and SnakeHead patrol vessels.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dubai",
-        "addressCountry": "AE",
-        "addressRegion": "Dubai Integrated Economic Zones"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+971-58-5088158",
-        "contactType": "Sales",
-        "email": "Info@naiveryacht.com"
-      },
-      "sameAs": [
-        "https://naiveryacht.com"
-      ],
-      "keywords": "dubai fishing, fishing UAE, yacht charter Dubai, boat rental Dubai, fishing charter UAE, aluminum boat UAE, deep sea fishing dubai, yachting UAE, TideMaster, SnakeHead, catamaran Dubai"
-    }
-    </script>
-
     <!-- JavaScript -->
+    <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script src="js/footer.js"></script>
     <script>

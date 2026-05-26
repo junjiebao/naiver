@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="images/logo narrow.png" alt="NAVIER YACHTS" class="footer-logo">
                 <p>NAVIER YACHTS FZCO bridges mass manufacturing excellence with Middle East regional demand, offering premium yachts and boats for GCC market.</p>
                 <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </li>
                 <li>
                     <i class="fas fa-phone"></i>
-                    <span><a href="tel:+971585088518">+971 58-5088518</a></span>
+                    <span><a href="tel:+971585088518">+971 58 508 8518</a></span>
                 </li>
                 <li>
                     <i class="fas fa-envelope"></i>
