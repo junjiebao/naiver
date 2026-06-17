@@ -139,10 +139,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Image lazy loading and error handling
     const allImages = document.querySelectorAll('img:not(.footer-logo)');
-    
+
     allImages.forEach(img => {
+        // Skip images that are already loaded (cached)
+        if (img.complete) {
+            img.classList.add('loaded');
+            return;
+        }
+
         // Add loading class
         img.classList.add('loading');
-        
+
         img.addEventListener('load', function() {
-            // Replace loading class with loaded
+            img.classList.remove('loading');
+            img.classList.add('loaded');
+        });
+
+        img.addEventListener('error', function() {
+            img.classList.remove('loading');
+            img.classList.add('error');
+        });
+    });
+
+}); // Close DOMContentLoaded

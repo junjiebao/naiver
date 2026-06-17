@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navItems = [
         { href: 'index.html', label: 'Home' },
-        { href: 'about.html', label: 'DEALER' },
+        { href: 'about.html', label: 'ABOUT US' },
         { href: 'products.html', label: 'Products & Services' },
         { href: 'projects.html', label: 'Projects' },
         { href: 'news.html', label: 'News & Events' },
-        { href: 'contact.html', label: 'Contact Us' }
+        { href: 'contact.html', label: 'Build Enquiry' }
     ];
 
     const navHTML = navItems.map(item => {

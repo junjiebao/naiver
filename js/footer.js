@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-newsletter">
             <div class="footer-newsletter-content">
                 <div class="footer-newsletter-text">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Stay updated with our latest news, boat launches, and maritime events.</p>
+                <h3>Project & Build Updates</h3>
+                <p>Receive updates on completed builds, new construction capabilities, and shipyard developments.</p>
                 </div>
                 <div class="footer-newsletter-form">
                 <form action="#" method="post">
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-content">
             <div class="footer-col">
                 <img src="images/logo narrow.png" alt="NAVIER YACHTS" class="footer-logo">
-                <p>NAVIER YACHTS FZCO bridges mass manufacturing excellence with Middle East regional demand, offering premium yachts and boats for GCC market.</p>
+                <p>NAVIER YACHTS — Custom yacht construction & OEM manufacturing. Dubai Design Center + Longkou, China Production Shipyard. Engineered in Dubai. Built in China. Delivered worldwide.</p>
                 <div class="social-links">
                 <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h4>Quick Links</h4>
                 <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">DEALER</a></li>
+                <li><a href="about.html">MANUFACTURER</a></li>
                 <li><a href="products.html">Products & Services</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="news.html">News & Events</a></li>
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             
             <div class="footer-col">
-                <h4>Our Products</h4>
+                <h4>Our Build Capabilities</h4>
                 <ul>
                 <li><a href="products.html#tidemaster">TideMaster Boats</a></li>
                 <li><a href="products.html#Patrol">SnakeHead Patrol Boats</a></li>
-                <li><a href="products.html#imported">Imported Yachts</a></li>
-                <li><a href="products.html#consultancy">Yacht Consultancy</a></li>
-                <li><a href="products.html#manufacturing">Manufacturing Partnership</a></li>
+                <li><a href="products.html#imported">Contract & OEM Builds</a></li>
+                <li><a href="products.html#consultancy">Engineering & Design</a></li>
+                <li><a href="products.html#manufacturing">OEM Production</a></li>
                 </ul>
             </div>
             
@@ -69,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li>
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Dubai Integrated Economic Zones (DSO), Dubai, UAE</span>
+                </li>
+                <li>
+                    <i class="fas fa-industry"></i>
+                    <span>Longkou Production Shipyard, Shandong, China</span>
                 </li>
                 <li>
                     <i class="fas fa-phone"></i>
