@@ -1,12 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://naiveryacht.com/sitemap.xml
+# The enquiry endpoint is a POST-only API plus a health check; there is nothing
+# here worth indexing and it should not appear in crawl logs.
+Disallow: /api/
 
-# Disallow access to specific directories (if any)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Crawl-delay (optional, in seconds)
-Crawl-delay: 1
+# Canonical sitemap
+Sitemap: https://www.navieryacht.com/sitemap.xml

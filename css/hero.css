@@ -38,14 +38,20 @@
     z-index: -1;
 }
 
+/* The caption panel. It used to be `height: 100%` with `max-width: 80%`, which
+   stretched the translucent background into a blue slab covering four fifths of
+   the hero width and its entire height, tinting the photograph behind it. The
+   box now shrinks to its text (height:auto) and stops at a readable measure, so
+   it reads as a caption card sitting on the image rather than a filter. */
 .hero-content {
     text-align: center;
     color: white;
     z-index: 1;
-    background-color: rgba(10, 93, 147, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
+    background-color: rgba(10, 93, 147, 0.72);
+    padding: 28px 32px;
+    border-radius: 12px;
+    max-width: min(1040px, 100%);
+    height: auto;
 }
 
 .slider-nav {

@@ -1,0 +1,18 @@
+# Assistant workspace: session memory and scratch files. Not part of the site.
+.workbuddy/
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Tooling caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.env
+.env.*

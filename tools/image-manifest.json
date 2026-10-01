@@ -1,0 +1,779 @@
+{
+  "18FT/18ft sb port.jpg": {
+    "width": 2304,
+    "height": 4096,
+    "slug": "18ft-18ft-sb-port-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-18ft-sb-port-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-18ft-sb-port-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-18ft-sb-port-jpg-1600.webp"
+    },
+    "original_bytes": 2747474
+  },
+  "18FT/18ft sb.jpg": {
+    "width": 4096,
+    "height": 2304,
+    "slug": "18ft-18ft-sb-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-18ft-sb-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-18ft-sb-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-18ft-sb-jpg-1600.webp"
+    },
+    "original_bytes": 2966911
+  },
+  "18FT/18ft stern.jpg": {
+    "width": 2304,
+    "height": 4096,
+    "slug": "18ft-18ft-stern-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-18ft-stern-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-18ft-stern-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-18ft-stern-jpg-1600.webp"
+    },
+    "original_bytes": 2940155
+  },
+  "18FT/5.5.jpg": {
+    "width": 2275,
+    "height": 1279,
+    "slug": "18ft-5-5-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-5-5-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-5-5-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-5-5-jpg-1600.webp"
+    },
+    "original_bytes": 295331
+  },
+  "18FT/Image_20251002200924_4_160.jpg": {
+    "width": 2276,
+    "height": 1280,
+    "slug": "18ft-image-20251002200924-4-160-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-image-20251002200924-4-160-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-image-20251002200924-4-160-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-image-20251002200924-4-160-jpg-1600.webp"
+    },
+    "original_bytes": 94712
+  },
+  "18FT/Image_20251002200927_6_160.jpg": {
+    "width": 2276,
+    "height": 1280,
+    "slug": "18ft-image-20251002200927-6-160-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-image-20251002200927-6-160-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-image-20251002200927-6-160-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-image-20251002200927-6-160-jpg-1600.webp"
+    },
+    "original_bytes": 82399
+  },
+  "18FT/Image_20251002200928_7_160.jpg": {
+    "width": 2276,
+    "height": 1280,
+    "slug": "18ft-image-20251002200928-7-160-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-image-20251002200928-7-160-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-image-20251002200928-7-160-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-image-20251002200928-7-160-jpg-1600.webp"
+    },
+    "original_bytes": 94615
+  },
+  "18FT/Image_20251002200930_8_160.jpg": {
+    "width": 2276,
+    "height": 1280,
+    "slug": "18ft-image-20251002200930-8-160-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-image-20251002200930-8-160-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-image-20251002200930-8-160-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-image-20251002200930-8-160-jpg-1600.webp"
+    },
+    "original_bytes": 87835
+  },
+  "18FT/Image_20251002200931_9_160.png": {
+    "width": 2730,
+    "height": 1407,
+    "slug": "18ft-image-20251002200931-9-160-png",
+    "variants": {
+      "480": "images/opt/18FT/18ft-image-20251002200931-9-160-png-480.webp",
+      "960": "images/opt/18FT/18ft-image-20251002200931-9-160-png-960.webp",
+      "1600": "images/opt/18FT/18ft-image-20251002200931-9-160-png-1600.webp"
+    },
+    "original_bytes": 2045964
+  },
+  "18FT/N18-1.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "slug": "18ft-n18-1-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-n18-1-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-n18-1-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-n18-1-jpg-1600.webp"
+    },
+    "original_bytes": 254542
+  },
+  "18FT/N18-2.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "slug": "18ft-n18-2-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-n18-2-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-n18-2-jpg-960.webp",
+      "1280": "images/opt/18FT/18ft-n18-2-jpg-1280.webp"
+    },
+    "original_bytes": 177934
+  },
+  "18FT/N18-3.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "slug": "18ft-n18-3-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-n18-3-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-n18-3-jpg-960.webp",
+      "1280": "images/opt/18FT/18ft-n18-3-jpg-1280.webp"
+    },
+    "original_bytes": 207226
+  },
+  "18FT/N18-4.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "slug": "18ft-n18-4-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-n18-4-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-n18-4-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-n18-4-jpg-1600.webp"
+    },
+    "original_bytes": 261929
+  },
+  "18FT/Ninja 18  NZ 1.jpg": {
+    "width": 1652,
+    "height": 1239,
+    "slug": "18ft-ninja-18-nz-1-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ninja-18-nz-1-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ninja-18-nz-1-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-ninja-18-nz-1-jpg-1600.webp"
+    },
+    "original_bytes": 565359
+  },
+  "18FT/Ninja 18  NZ 2.jpg": {
+    "width": 1239,
+    "height": 1653,
+    "slug": "18ft-ninja-18-nz-2-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ninja-18-nz-2-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ninja-18-nz-2-jpg-960.webp",
+      "1239": "images/opt/18FT/18ft-ninja-18-nz-2-jpg-1239.webp"
+    },
+    "original_bytes": 485133
+  },
+  "18FT/Ninja 18  NZ 3.jpg": {
+    "width": 1239,
+    "height": 1653,
+    "slug": "18ft-ninja-18-nz-3-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ninja-18-nz-3-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ninja-18-nz-3-jpg-960.webp",
+      "1239": "images/opt/18FT/18ft-ninja-18-nz-3-jpg-1239.webp"
+    },
+    "original_bytes": 518336
+  },
+  "18FT/Ninja 18  NZ 4.jpg": {
+    "width": 1239,
+    "height": 1653,
+    "slug": "18ft-ninja-18-nz-4-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ninja-18-nz-4-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ninja-18-nz-4-jpg-960.webp",
+      "1239": "images/opt/18FT/18ft-ninja-18-nz-4-jpg-1239.webp"
+    },
+    "original_bytes": 396768
+  },
+  "18FT/ninja 18 port.jpg": {
+    "width": 2276,
+    "height": 1280,
+    "slug": "18ft-ninja-18-port-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ninja-18-port-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ninja-18-port-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-ninja-18-port-jpg-1600.webp"
+    },
+    "original_bytes": 85106
+  },
+  "18FT/Ready to ship 1.jpg": {
+    "width": 4032,
+    "height": 3024,
+    "slug": "18ft-ready-to-ship-1-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ready-to-ship-1-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ready-to-ship-1-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-ready-to-ship-1-jpg-1600.webp"
+    },
+    "original_bytes": 2898746
+  },
+  "18FT/Ready to ship 2.jpg": {
+    "width": 4032,
+    "height": 3024,
+    "slug": "18ft-ready-to-ship-2-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ready-to-ship-2-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ready-to-ship-2-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-ready-to-ship-2-jpg-1600.webp"
+    },
+    "original_bytes": 4602354
+  },
+  "18FT/Ready to ship 3.jpg": {
+    "width": 4032,
+    "height": 3024,
+    "slug": "18ft-ready-to-ship-3-jpg",
+    "variants": {
+      "480": "images/opt/18FT/18ft-ready-to-ship-3-jpg-480.webp",
+      "960": "images/opt/18FT/18ft-ready-to-ship-3-jpg-960.webp",
+      "1600": "images/opt/18FT/18ft-ready-to-ship-3-jpg-1600.webp"
+    },
+    "original_bytes": 5022497
+  },
+  "28FT/FL boat 1.JPG": {
+    "width": 1279,
+    "height": 1706,
+    "slug": "28ft-fl-boat-1-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-fl-boat-1-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-fl-boat-1-jpg-960.webp",
+      "1279": "images/opt/28FT/28ft-fl-boat-1-jpg-1279.webp"
+    },
+    "original_bytes": 299671
+  },
+  "28FT/FL boat 2.JPG": {
+    "width": 1279,
+    "height": 1706,
+    "slug": "28ft-fl-boat-2-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-fl-boat-2-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-fl-boat-2-jpg-960.webp",
+      "1279": "images/opt/28FT/28ft-fl-boat-2-jpg-1279.webp"
+    },
+    "original_bytes": 311587
+  },
+  "28FT/FL boat 3.JPG": {
+    "width": 1279,
+    "height": 1706,
+    "slug": "28ft-fl-boat-3-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-fl-boat-3-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-fl-boat-3-jpg-960.webp",
+      "1279": "images/opt/28FT/28ft-fl-boat-3-jpg-1279.webp"
+    },
+    "original_bytes": 341760
+  },
+  "28FT/hunter 28 hull.JPG": {
+    "width": 2275,
+    "height": 1279,
+    "slug": "28ft-hunter-28-hull-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-hull-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-hull-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-hull-jpg-1600.webp"
+    },
+    "original_bytes": 379740
+  },
+  "28FT/Hunter 28 installing.JPG": {
+    "width": 1279,
+    "height": 2275,
+    "slug": "28ft-hunter-28-installing-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-installing-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-installing-jpg-960.webp",
+      "1279": "images/opt/28FT/28ft-hunter-28-installing-jpg-1279.webp"
+    },
+    "original_bytes": 297328
+  },
+  "28FT/hunter 28 masirah 1.jpg": {
+    "width": 2560,
+    "height": 1920,
+    "slug": "28ft-hunter-28-masirah-1-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-masirah-1-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-masirah-1-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-masirah-1-jpg-1600.webp"
+    },
+    "original_bytes": 1344004
+  },
+  "28FT/hunter 28 masirah 2.jpg": {
+    "width": 1707,
+    "height": 1280,
+    "slug": "28ft-hunter-28-masirah-2-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-masirah-2-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-masirah-2-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-masirah-2-jpg-1600.webp"
+    },
+    "original_bytes": 225561
+  },
+  "28FT/hunter 28 masirah port front.jpg": {
+    "width": 1706,
+    "height": 1279,
+    "slug": "28ft-hunter-28-masirah-port-front-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-masirah-port-front-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-masirah-port-front-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-masirah-port-front-jpg-1600.webp"
+    },
+    "original_bytes": 246251
+  },
+  "28FT/hunter 28 masirah port stern.jpg": {
+    "width": 1706,
+    "height": 1279,
+    "slug": "28ft-hunter-28-masirah-port-stern-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-masirah-port-stern-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-masirah-port-stern-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-masirah-port-stern-jpg-1600.webp"
+    },
+    "original_bytes": 223935
+  },
+  "28FT/hunter 28 masirah stern.jpg": {
+    "width": 1279,
+    "height": 1706,
+    "slug": "28ft-hunter-28-masirah-stern-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-masirah-stern-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-masirah-stern-jpg-960.webp",
+      "1279": "images/opt/28FT/28ft-hunter-28-masirah-stern-jpg-1279.webp"
+    },
+    "original_bytes": 182780
+  },
+  "28FT/hunter 28 shipping starboard.JPG": {
+    "width": 1875,
+    "height": 800,
+    "slug": "28ft-hunter-28-shipping-starboard-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-shipping-starboard-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-shipping-starboard-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-shipping-starboard-jpg-1600.webp"
+    },
+    "original_bytes": 254654
+  },
+  "28FT/Hunter 28 Shipping.JPG": {
+    "width": 1875,
+    "height": 800,
+    "slug": "28ft-hunter-28-shipping-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-hunter-28-shipping-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-hunter-28-shipping-jpg-960.webp",
+      "1600": "images/opt/28FT/28ft-hunter-28-shipping-jpg-1600.webp"
+    },
+    "original_bytes": 316642
+  },
+  "28FT/IMG_5210.jpg": {
+    "width": 1241,
+    "height": 568,
+    "slug": "28ft-img-5210-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-img-5210-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-img-5210-jpg-960.webp",
+      "1241": "images/opt/28FT/28ft-img-5210-jpg-1241.webp"
+    },
+    "original_bytes": 194970
+  },
+  "28FT/IMG_5211.jpg": {
+    "width": 1163,
+    "height": 462,
+    "slug": "28ft-img-5211-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-img-5211-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-img-5211-jpg-960.webp",
+      "1163": "images/opt/28FT/28ft-img-5211-jpg-1163.webp"
+    },
+    "original_bytes": 213342
+  },
+  "28FT/IMG_6093.JPG": {
+    "width": 1068,
+    "height": 549,
+    "slug": "28ft-img-6093-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-img-6093-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-img-6093-jpg-960.webp",
+      "1068": "images/opt/28FT/28ft-img-6093-jpg-1068.webp"
+    },
+    "original_bytes": 101091
+  },
+  "28FT/IMG_6094.JPG": {
+    "width": 1241,
+    "height": 568,
+    "slug": "28ft-img-6094-jpg",
+    "variants": {
+      "480": "images/opt/28FT/28ft-img-6094-jpg-480.webp",
+      "960": "images/opt/28FT/28ft-img-6094-jpg-960.webp",
+      "1241": "images/opt/28FT/28ft-img-6094-jpg-1241.webp"
+    },
+    "original_bytes": 102955
+  },
+  "38FT/3 sides.JPG": {
+    "width": 3000,
+    "height": 4000,
+    "slug": "38ft-3-sides-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-3-sides-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-3-sides-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-3-sides-jpg-1600.webp"
+    },
+    "original_bytes": 1409244
+  },
+  "38FT/building.JPG": {
+    "width": 1706,
+    "height": 1279,
+    "slug": "38ft-building-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-building-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-building-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-building-jpg-1600.webp"
+    },
+    "original_bytes": 385672
+  },
+  "38FT/Cat 38 in water.png": {
+    "width": 886,
+    "height": 629,
+    "slug": "38ft-cat-38-in-water-png",
+    "variants": {
+      "480": "images/opt/38FT/38ft-cat-38-in-water-png-480.webp",
+      "886": "images/opt/38FT/38ft-cat-38-in-water-png-886.webp"
+    },
+    "original_bytes": 898414
+  },
+  "38FT/Cat 38 ready.JPG": {
+    "width": 1706,
+    "height": 1279,
+    "slug": "38ft-cat-38-ready-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-cat-38-ready-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-cat-38-ready-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-cat-38-ready-jpg-1600.webp"
+    },
+    "original_bytes": 263573
+  },
+  "38FT/Cat 38 shipping left.jpg": {
+    "width": 900,
+    "height": 1600,
+    "slug": "38ft-cat-38-shipping-left-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-cat-38-shipping-left-jpg-480.webp",
+      "900": "images/opt/38FT/38ft-cat-38-shipping-left-jpg-900.webp"
+    },
+    "original_bytes": 144724
+  },
+  "38FT/Cat 38 Shipping ready.JPG": {
+    "width": 1920,
+    "height": 1080,
+    "slug": "38ft-cat-38-shipping-ready-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-cat-38-shipping-ready-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-cat-38-shipping-ready-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-cat-38-shipping-ready-jpg-1600.webp"
+    },
+    "original_bytes": 294402
+  },
+  "38FT/Cat38 shipping covered.jpg": {
+    "width": 1599,
+    "height": 899,
+    "slug": "38ft-cat38-shipping-covered-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-cat38-shipping-covered-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-cat38-shipping-covered-jpg-960.webp",
+      "1599": "images/opt/38FT/38ft-cat38-shipping-covered-jpg-1599.webp"
+    },
+    "original_bytes": 303685
+  },
+  "38FT/DIP 1.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "slug": "38ft-dip-1-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-dip-1-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-dip-1-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-dip-1-jpg-1600.webp"
+    },
+    "original_bytes": 309400
+  },
+  "38FT/DIP 2.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "slug": "38ft-dip-2-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-dip-2-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-dip-2-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-dip-2-jpg-1600.webp"
+    },
+    "original_bytes": 232755
+  },
+  "38FT/DIP 3.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "slug": "38ft-dip-3-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-dip-3-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-dip-3-jpg-960.webp",
+      "1280": "images/opt/38FT/38ft-dip-3-jpg-1280.webp"
+    },
+    "original_bytes": 216167
+  },
+  "38FT/DIP 4.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "slug": "38ft-dip-4-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-dip-4-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-dip-4-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-dip-4-jpg-1600.webp"
+    },
+    "original_bytes": 352820
+  },
+  "38FT/New design.PNG": {
+    "width": 877,
+    "height": 511,
+    "slug": "38ft-new-design-png",
+    "variants": {
+      "480": "images/opt/38FT/38ft-new-design-png-480.webp",
+      "877": "images/opt/38FT/38ft-new-design-png-877.webp"
+    },
+    "original_bytes": 101042
+  },
+  "38FT/starboard front.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "slug": "38ft-starboard-front-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-starboard-front-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-starboard-front-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-starboard-front-jpg-1600.webp"
+    },
+    "original_bytes": 241594
+  },
+  "38FT/starboard side.JPG": {
+    "width": 3000,
+    "height": 1818,
+    "slug": "38ft-starboard-side-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-starboard-side-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-starboard-side-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-starboard-side-jpg-1600.webp"
+    },
+    "original_bytes": 775894
+  },
+  "38FT/starboard upside.JPG": {
+    "width": 3000,
+    "height": 1611,
+    "slug": "38ft-starboard-upside-jpg",
+    "variants": {
+      "480": "images/opt/38FT/38ft-starboard-upside-jpg-480.webp",
+      "960": "images/opt/38FT/38ft-starboard-upside-jpg-960.webp",
+      "1600": "images/opt/38FT/38ft-starboard-upside-jpg-1600.webp"
+    },
+    "original_bytes": 400896
+  },
+  "42FT/42FT 1.jpg": {
+    "width": 1705,
+    "height": 843,
+    "slug": "42ft-42ft-1-jpg",
+    "variants": {
+      "480": "images/opt/42FT/42ft-42ft-1-jpg-480.webp",
+      "960": "images/opt/42FT/42ft-42ft-1-jpg-960.webp",
+      "1600": "images/opt/42FT/42ft-42ft-1-jpg-1600.webp"
+    },
+    "original_bytes": 306217
+  },
+  "42FT/42FT 2.png": {
+    "width": 1713,
+    "height": 712,
+    "slug": "42ft-42ft-2-png",
+    "variants": {
+      "480": "images/opt/42FT/42ft-42ft-2-png-480.webp",
+      "960": "images/opt/42FT/42ft-42ft-2-png-960.webp",
+      "1600": "images/opt/42FT/42ft-42ft-2-png-1600.webp"
+    },
+    "original_bytes": 1104699
+  },
+  "42FT/42FT.png": {
+    "width": 1663,
+    "height": 874,
+    "slug": "42ft-42ft-png",
+    "variants": {
+      "480": "images/opt/42FT/42ft-42ft-png-480.webp",
+      "960": "images/opt/42FT/42ft-42ft-png-960.webp",
+      "1600": "images/opt/42FT/42ft-42ft-png-1600.webp"
+    },
+    "original_bytes": 1256490
+  },
+  "logo-narrow.png": {
+    "width": 1019,
+    "height": 260,
+    "slug": "logo-narrow-png",
+    "variants": {
+      "480": "images/opt/logo-narrow-png-480.webp",
+      "960": "images/opt/logo-narrow-png-960.webp",
+      "1019": "images/opt/logo-narrow-png-1019.webp"
+    },
+    "original_bytes": 42844
+  },
+  "navier-logo.png": {
+    "width": 1207,
+    "height": 609,
+    "slug": "navier-logo-png",
+    "variants": {
+      "480": "images/opt/navier-logo-png-480.webp",
+      "960": "images/opt/navier-logo-png-960.webp",
+      "1207": "images/opt/navier-logo-png-1207.webp"
+    },
+    "original_bytes": 52128
+  },
+  "og-image.jpg": {
+    "width": 1200,
+    "height": 630,
+    "slug": "og-image-jpg",
+    "variants": {
+      "480": "images/opt/og-image-jpg-480.webp",
+      "960": "images/opt/og-image-jpg-960.webp",
+      "1200": "images/opt/og-image-jpg-1200.webp"
+    },
+    "original_bytes": 155205
+  },
+  "Snakehead/1200/snakehead 1200.png": {
+    "width": 1259,
+    "height": 895,
+    "slug": "snakehead-1200-snakehead-1200-png",
+    "variants": {
+      "480": "images/opt/Snakehead/1200/snakehead-1200-snakehead-1200-png-480.webp",
+      "960": "images/opt/Snakehead/1200/snakehead-1200-snakehead-1200-png-960.webp",
+      "1259": "images/opt/Snakehead/1200/snakehead-1200-snakehead-1200-png-1259.webp"
+    },
+    "original_bytes": 2053449
+  },
+  "Snakehead/1500/snakehead 1500.png": {
+    "width": 1259,
+    "height": 893,
+    "slug": "snakehead-1500-snakehead-1500-png",
+    "variants": {
+      "480": "images/opt/Snakehead/1500/snakehead-1500-snakehead-1500-png-480.webp",
+      "960": "images/opt/Snakehead/1500/snakehead-1500-snakehead-1500-png-960.webp",
+      "1259": "images/opt/Snakehead/1500/snakehead-1500-snakehead-1500-png-1259.webp"
+    },
+    "original_bytes": 1739664
+  },
+  "Snakehead/2300/snakehead 2300 small.png": {
+    "width": 1218,
+    "height": 655,
+    "slug": "snakehead-2300-snakehead-2300-small-png",
+    "variants": {
+      "480": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-small-png-480.webp",
+      "960": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-small-png-960.webp",
+      "1218": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-small-png-1218.webp"
+    },
+    "original_bytes": 1624235
+  },
+  "Snakehead/2300/snakehead 2300.png": {
+    "width": 1258,
+    "height": 897,
+    "slug": "snakehead-2300-snakehead-2300-png",
+    "variants": {
+      "480": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-png-480.webp",
+      "960": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-png-960.webp",
+      "1258": "images/opt/Snakehead/2300/snakehead-2300-snakehead-2300-png-1258.webp"
+    },
+    "original_bytes": 1994381
+  },
+  "Snakehead/IMG_1813.JPG": {
+    "width": 1881,
+    "height": 1280,
+    "slug": "snakehead-img-1813-jpg",
+    "variants": {
+      "480": "images/opt/Snakehead/snakehead-img-1813-jpg-480.webp",
+      "960": "images/opt/Snakehead/snakehead-img-1813-jpg-960.webp",
+      "1600": "images/opt/Snakehead/snakehead-img-1813-jpg-1600.webp"
+    },
+    "original_bytes": 201308
+  },
+  "Snakehead/IMG_1815.JPG": {
+    "width": 1706,
+    "height": 1280,
+    "slug": "snakehead-img-1815-jpg",
+    "variants": {
+      "480": "images/opt/Snakehead/snakehead-img-1815-jpg-480.webp",
+      "960": "images/opt/Snakehead/snakehead-img-1815-jpg-960.webp",
+      "1600": "images/opt/Snakehead/snakehead-img-1815-jpg-1600.webp"
+    },
+    "original_bytes": 227372
+  },
+  "Snakehead/IMG_2122.jpg": {
+    "width": 1290,
+    "height": 957,
+    "slug": "snakehead-img-2122-jpg",
+    "variants": {
+      "480": "images/opt/Snakehead/snakehead-img-2122-jpg-480.webp",
+      "960": "images/opt/Snakehead/snakehead-img-2122-jpg-960.webp",
+      "1290": "images/opt/Snakehead/snakehead-img-2122-jpg-1290.webp"
+    },
+    "original_bytes": 578958
+  },
+  "Yachts/60ft catamaran design.JPG": {
+    "width": 800,
+    "height": 400,
+    "slug": "yachts-60ft-catamaran-design-jpg",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-60ft-catamaran-design-jpg-480.webp",
+      "800": "images/opt/Yachts/yachts-60ft-catamaran-design-jpg-800.webp"
+    },
+    "original_bytes": 49333
+  },
+  "Yachts/60ft catamaran.jpg": {
+    "width": 4032,
+    "height": 3024,
+    "slug": "yachts-60ft-catamaran-jpg",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-60ft-catamaran-jpg-480.webp",
+      "960": "images/opt/Yachts/yachts-60ft-catamaran-jpg-960.webp",
+      "1600": "images/opt/Yachts/yachts-60ft-catamaran-jpg-1600.webp"
+    },
+    "original_bytes": 3470957
+  },
+  "Yachts/ayana 68.jpg": {
+    "width": 1440,
+    "height": 1080,
+    "slug": "yachts-ayana-68-jpg",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-ayana-68-jpg-480.webp",
+      "960": "images/opt/Yachts/yachts-ayana-68-jpg-960.webp",
+      "1440": "images/opt/Yachts/yachts-ayana-68-jpg-1440.webp"
+    },
+    "original_bytes": 311970
+  },
+  "Yachts/dubai yacht show credit Gulf Craft.webp": {
+    "width": 4096,
+    "height": 2734,
+    "slug": "yachts-dubai-yacht-show-credit-gulf-craft-webp",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-dubai-yacht-show-credit-gulf-craft-webp-480.webp",
+      "960": "images/opt/Yachts/yachts-dubai-yacht-show-credit-gulf-craft-webp-960.webp",
+      "1600": "images/opt/Yachts/yachts-dubai-yacht-show-credit-gulf-craft-webp-1600.webp"
+    },
+    "original_bytes": 1089792
+  },
+  "Yachts/Malaysia patrol boat.JPG": {
+    "width": 1706,
+    "height": 1280,
+    "slug": "yachts-malaysia-patrol-boat-jpg",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-malaysia-patrol-boat-jpg-480.webp",
+      "960": "images/opt/Yachts/yachts-malaysia-patrol-boat-jpg-960.webp",
+      "1600": "images/opt/Yachts/yachts-malaysia-patrol-boat-jpg-1600.webp"
+    },
+    "original_bytes": 227372
+  },
+  "Yachts/moana 80 cat.jpg": {
+    "width": 1616,
+    "height": 1080,
+    "slug": "yachts-moana-80-cat-jpg",
+    "variants": {
+      "480": "images/opt/Yachts/yachts-moana-80-cat-jpg-480.webp",
+      "960": "images/opt/Yachts/yachts-moana-80-cat-jpg-960.webp",
+      "1600": "images/opt/Yachts/yachts-moana-80-cat-jpg-1600.webp"
+    },
+    "original_bytes": 152519
+  }
+}

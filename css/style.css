@@ -1,4 +1,4 @@
-/* 
+/*
 NAVIER YACHTS Website Stylesheet
 Colors:
 - Primary Blue: #0A5D93 (ocean blue)
@@ -130,29 +130,6 @@ section {
     color: #FFFFFF;
 }
 
-.tertiary-btn {
-    background-color: #0ABDE3;
-    color: #FFFFFF;
-    border: 2px solid #0ABDE3;
-}
-
-.tertiary-btn:hover {
-    background-color: transparent;
-    color: #0ABDE3;
-}
-
-.white-btn {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #0A5D93;
-    border: 2px solid transparent;
-}
-
-.white-btn:hover {
-    background-color: transparent;
-    color: #FFFFFF;
-    border: 2px solid #FFFFFF;
-}
-
 /* ---- Header Styles ---- */
 header {
     position: fixed;
@@ -174,6 +151,18 @@ header .container {
 
 .logo img {
     height: 50px;
+    /* An inline image sits on the text baseline, which adds the font's
+       descender space below it -- 8px here. That made the header 88px tall
+       while `body { padding-top: 80px }` only reserved 80px, so the top of the
+       hero sat underneath the fixed header. */
+    display: block;
+    /* Pair a CSS height with `width: auto`. Without it the width presentation
+       attribute that every <img> now carries (added so the browser can reserve
+       space and avoid layout shift) wins the width axis, and the logo rendered
+       706x50 instead of its true 196x50 -- badly stretched. That excess width
+       then squeezed the navigation, wrapping every menu item onto two lines and
+       pushing the header from 80px to 107px tall. */
+    width: auto;
 }
 
 .nav-menu {
@@ -220,57 +209,63 @@ header .container {
     color: #0A5D93;
 }
 
-/* Language selector */
-.language-selector {
-    position: relative;
+/* ---- Mobile navigation ----
+   The button and the list both existed from the start, but no rule ever
+   switched between them: `.menu-toggle` stayed `display: none` at every width,
+   so on a phone there was no way to open the menu, and the desktop row simply
+   overflowed the viewport (89px past the right edge at 390px wide, taking the
+   whole document with it). js/main.js already toggles `.active` on both
+   elements and maintains aria-expanded, so only the layout belongs here. */
+@media screen and (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #FFFFFF;
+        border-top: 1px solid #eef2f6;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #eef2f6;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    /* The underline-on-hover marker relies on inline flow; it makes no sense
+       for a full-width stacked link. */
+    .nav-menu a:before {
+        display: none;
+    }
 }
 
-.language-selector > a {
-    display: flex;
-    align-items: center;
-}
-
-.language-selector > a:after {
-    content: '\f107';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    margin-left: 5px;
-}
-
-.language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #FFFFFF;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 120px;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-.language-selector:hover .language-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.language-dropdown li {
-    margin: 0;
-    padding: 10px 15px;
-    border-bottom: 1px solid #f1f1f1;
-}
-
-.language-dropdown li:last-child {
-    border-bottom: none;
-}
-
-.language-dropdown a {
-    padding: 0;
-}
+/* The header used to carry a language dropdown, but nothing ever listened for
+   a click on it: it was a dead control that misled visitors and screen
+   readers. The markup was removed, so its rules go with it. If real
+   localisation is added later, rebuild both the markup and these styles. */
 
 /* ---- Hero Section ---- */
 .hero {
@@ -279,7 +274,11 @@ header .container {
     min-height: 600px;
     background-color: #1A7CB7;
     overflow: hidden;
-    margin-top: 80px;
+    /* The fixed header is already accounted for by `body { padding-top: 80px }`;
+       the extra `margin-top: 80px` that used to sit here counted it a second
+       time, leaving an 80px white band between the navigation and the hero. */
+    padding: 0;
+    margin-top: 0;
 }
 
 .hero-slider {
@@ -334,23 +333,6 @@ header .container {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.slider-controls {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.slider-dots {
-    display: flex;
-    gap: 10px;
-    margin: 0 15px;
 }
 
 .slider-dot {
@@ -492,11 +474,16 @@ footer:before {
     margin-bottom: 40px;
 }
 
+/* Uses the dedicated white, transparent-background logo asset
+   (images/logo-narrow-white.png, generated by tools/build-assets.py).
+   Do NOT reintroduce `filter: brightness(0) invert(1)` here: the source
+   logo has an opaque white background, so that filter flattens the whole
+   image — background included — into a solid white block. */
 .footer-logo {
     display: block;
     height: 60px;
+    width: auto;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1);
 }
 
 .footer-col p {
@@ -539,7 +526,7 @@ footer:before {
 
 .footer-col ul li a:before {
     content: '\f105';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
     left: 0;
@@ -659,36 +646,36 @@ footer:before {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-newsletter-form form {
         margin: 0 auto;
     }
-    
+
     .footer-col h4:after {
         left: 50%;
         transform: translateX(-50%);
     }
-    
+
     .footer-col {
         text-align: center;
     }
-    
+
     .contact-info li {
         justify-content: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .footer-col ul li a {
         padding-left: 0;
     }
-    
+
     .footer-col ul li a:before {
         display: none;
     }
-    
+
     .back-to-top {
         right: 15px;
     }
@@ -825,7 +812,7 @@ img.error {
     .models-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .model-card img {
         height: 240px;
     }
@@ -842,137 +829,6 @@ img.error {
     z-index: 100;
 }
 
-/* Additional Homepage Styles */
-
-/* Welcome Section */
-.welcome-section {
-    background-color: #F5F7F9;
-}
-
-.welcome-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.welcome-text {
-    flex: 1;
-}
-
-.welcome-image {
-    flex: 1;
-    text-align: center;
-}
-
-.welcome-image img {
-    max-width: 80%;
-    height: auto;
-}
-
-/* Featured Products Categories */
-.product-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.product-category {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    height: 300px;
-}
-
-.category-image {
-    position: relative;
-    height: 100%;
-}
-
-.category-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.product-category:hover img {
-    transform: scale(1.05);
-}
-
-.category-image .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: #FFFFFF;
-    transform: translateY(0);
-    transition: all 0.5s ease;
-}
-
-.category-image .overlay h3 {
-    color: #FFFFFF;
-    margin-bottom: 5px;
-}
-
-.category-image .overlay p {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Services Grid */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.service-card {
-    background-color: #FFFFFF;
-    padding: 30px 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(10, 93, 147, 0.1);
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-icon i {
-    font-size: 30px;
-    color: #0A5D93;
-}
-
-.service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.service-card p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
 .read-more {
     color: #0A5D93;
     font-weight: 600;
@@ -983,7 +839,7 @@ img.error {
 
 .read-more:after {
     content: '\f105';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     margin-left: 5px;
     transition: all 0.3s ease;
@@ -991,129 +847,6 @@ img.error {
 
 .read-more:hover:after {
     margin-left: 8px;
-}
-
-/* Testimonial Enhancements */
-.testimonials {
-    background-color: #F5F7F9;
-    position: relative;
-}
-
-.testimonial-content {
-    background-color: #FFFFFF;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    margin: 20px auto;
-    max-width: 800px;
-    position: relative;
-}
-
-.quote-icon {
-    position: absolute;
-    top: -15px;
-    left: 30px;
-    width: 40px;
-    height: 40px;
-    background-color: #0A5D93;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-}
-
-.testimonial-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    font-style: italic;
-}
-
-.client-info {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.client-info img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.client-info h4 {
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-}
-
-.client-info p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    color: #666;
-    font-style: normal;
-}
-
-/* Recent Projects Preview */
-.projects-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.project-preview-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.project-preview-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.project-preview-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: all 0.5s ease;
-}
-
-.project-preview-card:hover img {
-    transform: scale(1.05);
-}
-
-.project-preview-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: #FFFFFF;
-}
-
-.project-preview-info h3 {
-    color: #FFFFFF;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-}
-
-.project-preview-info p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.projects-link-wrapper {
-    text-align: center;
-    margin-top: 30px;
 }
 
 /* Call to Action Enhancement */
@@ -1138,17 +871,6 @@ img.error {
 
 /* Responsive Adjustments */
 @media screen and (max-width: 992px) {
-    .welcome-content {
-        flex-direction: column;
-    }
-    
-    .welcome-image {
-        order: -1; /* Show image first on mobile */
-    }
-    
-    .project-preview-card img {
-        height: 200px;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1156,53 +878,14 @@ img.error {
         height: 60vh;
         min-height: 400px;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
-    .service-card {
-        padding: 25px 20px;
-    }
-    
-    .testimonial-content {
-        padding: 30px 20px;
-    }
-    
+
     .cta h2 {
         font-size: 2rem;
     }
-}
-
-/* ===== UNIFIED DESIGN SYSTEM ADDITIONS ===== */
-
-/* ---- Gradient Pill Button (primary action) ---- */
-.btn-gradient {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 35px;
-    background: linear-gradient(135deg, #0A5D93 0%, #0ABDE3 100%);
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(10, 93, 147, 0.3);
-    letter-spacing: 0.5px;
-}
-
-.btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(10, 93, 147, 0.4);
-    color: white;
-}
-
-.btn-gradient:active {
-    transform: translateY(-1px);
 }
 
 /* ---- Card Detail Link (secondary text link) ---- */
@@ -1285,164 +968,6 @@ img.error {
     border-color: transparent;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(10, 93, 147, 0.3);
-}
-
-/* ---- Content Card (unified news/project card style) ---- */
-.content-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.content-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-}
-
-.content-card .card-image {
-    position: relative;
-    overflow: hidden;
-    height: 250px;
-}
-
-.content-card .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.content-card:hover .card-image img {
-    transform: scale(1.05);
-}
-
-.content-card .card-date {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(135deg, #0A5D93 0%, #0ABDE3 100%);
-    color: white;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(10, 93, 147, 0.4);
-    min-width: 70px;
-}
-
-.content-card .card-date .day {
-    display: block;
-    font-size: 26px;
-    font-weight: bold;
-    line-height: 1;
-    margin-bottom: 3px;
-}
-
-.content-card .card-date .month {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.content-card .card-date .year {
-    display: block;
-    font-size: 11px;
-    opacity: 0.9;
-    margin-top: 2px;
-}
-
-.content-card .card-body {
-    padding: 25px;
-}
-
-.content-card .card-body h3 {
-    font-size: 20px;
-    color: #2c3e50;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-.content-card .card-body p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-/* ---- Info Box (highlight box for key info) ---- */
-.info-box {
-    margin: 30px 0;
-    padding: 25px;
-    background: rgba(10, 93, 147, 0.04);
-    border-radius: 12px;
-    border-left: 4px solid #0A5D93;
-}
-
-.info-box h3 {
-    color: #0A5D93;
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.info-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.info-box li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    position: relative;
-    padding-left: 25px;
-    color: #444;
-}
-
-.info-box li:last-child {
-    border-bottom: none;
-}
-
-.info-box li::before {
-    content: "\2713";
-    position: absolute;
-    left: 0;
-    color: #0ABDE3;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* ---- Form Input Standard ---- */
-.form-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #e1e5e9;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #0A5D93;
-    box-shadow: 0 0 0 3px rgba(10, 93, 147, 0.1);
-}
-
-.form-input.error {
-    border-color: #e74c3c;
-}
-
-/* ---- Form Label ---- */
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #2c3e50;
-    font-weight: 600;
-    font-size: 14px;
 }
 
 /* ---- Article Content (full article view) ---- */
@@ -1567,27 +1092,6 @@ img.error {
     border-left: 4px solid #0A5D93;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-/* ---- Close Button ---- */
-.close-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 25px;
-    background: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.close-btn:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
 }
 
 /* ---- News Meta Tags ---- */
@@ -1905,4 +1409,453 @@ img.error {
     .article-images { grid-template-columns: 1fr; }
     .links-grid { grid-template-columns: 1fr; gap: 20px; }
     .link-item { padding: 30px 20px; }
+}
+
+/* ==================================================================
+   Additions from the 2026-09 site audit
+   Form styling, accessible status feedback, button resets.
+   ================================================================== */
+
+/* --- Accessible hiding (used for honeypot fields and screen-reader text) --- */
+.visually-hidden,
+.honeypot-field {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- Native button resets for elements changed from div/span to button --- */
+.menu-toggle,
+.indicator,
+.prev-slide,
+.next-slide {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.menu-toggle {
+    background: none;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.indicator.active {
+    background-color: #ffffff;
+    transform: scale(1.15);
+}
+
+.indicator:focus-visible,
+.prev-slide:focus-visible,
+.next-slide:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid #0ABDE3;
+    outline-offset: 3px;
+}
+
+/* --- Contact / enquiry form --- */
+.form-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    letter-spacing: 0.01em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 16px; /* 16px keeps iOS Safari from zooming on focus */
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #dfe4e8;
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+    border-color: #b9c4cc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0A5D93;
+    box-shadow: 0 0 0 4px rgba(10, 93, 147, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"],
+.form-group select[aria-invalid="true"] {
+    border-color: #d9534f;
+    box-shadow: 0 0 0 4px rgba(217, 83, 79, 0.12);
+}
+
+.required-mark {
+    color: #d9534f;
+}
+
+.field-error {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #b3261e;
+}
+
+.form-note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #666666;
+    text-align: center;
+}
+
+/* --- Submission status feedback --- */
+.form-status {
+    margin-top: 22px;
+    padding: 16px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    border-left: 4px solid transparent;
+}
+
+.form-status[hidden] {
+    display: none;
+}
+
+.form-status--sending {
+    background-color: #eef4f9;
+    border-left-color: #0A5D93;
+    color: #0A5D93;
+}
+
+.form-status--success {
+    background-color: #edf7ee;
+    border-left-color: #2e7d32;
+    color: #1b5e20;
+}
+
+.form-status--error {
+    background-color: #fdecea;
+    border-left-color: #b3261e;
+    color: #b3261e;
+}
+
+.footer-newsletter-form .form-status {
+    margin-top: 14px;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+/* --- Disabled controls --- */
+.submit-btn:disabled,
+button[aria-busy="true"] {
+    opacity: 0.65;
+    cursor: progress;
+    transform: none;
+}
+
+/* --- Responsive form layout --- */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+/* --- Respect reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero-slide {
+        transition: none !important;
+    }
+}
+
+/* --- Category filter helpers (news page) --- */
+.is-hidden {
+    display: none !important;
+}
+
+.filter-empty {
+    text-align: center;
+    padding: 48px 20px;
+    margin: 0;
+    color: #666666;
+    font-size: 16px;
+}
+
+.filter-empty[hidden] {
+    display: none;
+}
+
+/* --- Keyboard focus for revealed articles and gallery dots --- */
+.full-article:focus,
+.full-project-article:focus {
+    outline: none;
+}
+
+.progress-dots .dot:focus-visible {
+    outline: 3px solid #0ABDE3;
+    outline-offset: 3px;
+}
+
+/* --- Prose pages (Privacy Policy, Terms of Service, Sitemap) --- */
+main.prose-page {
+    max-width: 860px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.legal-updated {
+    display: inline-block;
+    color: #43536b;
+    font-size: 0.95rem;
+    background: #f1f7fb;
+    border-left: 4px solid #0ABDE3;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 16px;
+    margin-bottom: 10px;
+}
+
+/* The global `section` rule adds 60px of padding, which is far too airy for
+   a long legal document; tighten it and separate clauses with a hairline. */
+.prose-page section {
+    padding: 20px 0;
+    border-bottom: 1px solid #e9eff4;
+}
+
+.prose-page section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.prose-page h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.prose-page h3 {
+    font-size: 1.1rem;
+    margin: 22px 0 10px;
+    color: #084d7a;
+}
+
+.prose-page p {
+    color: #43536b;
+    line-height: 1.78;
+    margin-bottom: 14px;
+}
+
+.prose-page p:last-child {
+    margin-bottom: 0;
+}
+
+/* The site-wide `ul { list-style-type: none }` strips markers, which makes
+   legal lists unreadable; restore them inside the legal pages only. */
+.prose-page ul,
+.prose-page ol {
+    color: #43536b;
+    line-height: 1.78;
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.prose-page ul {
+    list-style-type: disc;
+}
+
+.prose-page ol {
+    list-style-type: decimal;
+}
+
+.prose-page li {
+    margin-bottom: 8px;
+}
+
+.prose-page li:last-child {
+    margin-bottom: 0;
+}
+
+.prose-page strong {
+    color: #1f2c3d;
+}
+
+.prose-page a {
+    color: #0A5D93;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.prose-page a:hover {
+    color: #084d7a;
+}
+
+/* Contact block inside a prose page: light background, so it must NOT reuse
+   the footer's .contact-info rules, which set white text for a dark footer. */
+.legal-contact {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 16px;
+}
+
+.legal-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #43536b;
+}
+
+.legal-contact li i {
+    color: #0A5D93;
+    font-size: 16px;
+    width: 20px;
+    flex: 0 0 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.legal-contact li a {
+    color: #0A5D93;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    main.prose-page {
+        padding-top: 24px;
+    }
+
+    .prose-page section {
+        padding: 16px 0;
+    }
+
+    .prose-page h2 {
+        font-size: 1.28rem;
+    }
+
+    .prose-page ul,
+    .prose-page ol {
+        padding-left: 20px;
+    }
+}
+
+/* --- Deep links into news articles and project case studies --- */
+/* With a real fragment in the "Read More" link, the target article is revealed
+   by CSS alone, so a shared link such as /news.html#cat38 works even if
+   JavaScript is unavailable (and search engines can crawl the anchor). */
+.full-article:target,
+.full-project-article:target {
+    display: block;
+}
+
+/* --- Footer newsletter on narrow screens --- */
+/* Both halves carried `min-width: 300px` while `.footer-newsletter` kept its
+   desktop 40px padding, so at a 390px viewport the pair needed 300px inside a
+   280px content box and pushed the document 17px wider than the screen (the
+   email input alone stuck out 48px). Stacking the halves and letting them
+   shrink removes the sideways scroll. */
+@media (max-width: 768px) {
+    .footer-newsletter {
+        padding: 24px 20px;
+        margin-bottom: 32px;
+    }
+
+    .footer-newsletter-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .footer-newsletter-text,
+    .footer-newsletter-form {
+        min-width: 0;
+    }
+
+    .footer-newsletter-form form {
+        max-width: none;
+        /* The submit button is given a full-width row below, so the flex line
+           has to be allowed to wrap -- without this the button's 100% width
+           was added to the input's, pushing the input 43px off screen. */
+        flex-wrap: wrap;
+    }
+
+    .footer-newsletter-form input {
+        min-width: 0;
+        border-radius: 4px;
+    }
+
+    .footer-newsletter-form .submit-btn {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 14px 25px;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
 }
