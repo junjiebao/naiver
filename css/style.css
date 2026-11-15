@@ -1430,6 +1430,21 @@ img.error {
     border: 0;
 }
 
+/* The honeypot wrapper is 1px wide, but its form controls kept their natural
+   width and padding (from .footer-newsletter-form input), so their box stuck
+   out past the mobile viewport. The wrapper clips them, so nothing was visible
+   and no scrollbar appeared, but the boxes registered as horizontal overflow.
+   Pin the inner controls to the wrapper. */
+.honeypot-field label,
+.honeypot-field input,
+.honeypot-field textarea {
+    flex: none;
+    width: 1px;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
 /* --- Native button resets for elements changed from div/span to button --- */
 .menu-toggle,
 .indicator,
