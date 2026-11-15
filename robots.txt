@@ -7,3 +7,6 @@ Disallow: /api/
 
 # Canonical sitemap
 Sitemap: https://www.navieryacht.com/sitemap.xml
+
+# Feed (RSS 2.0, for aggregators and answer engines; added 2026-11-15)
+# Feed: https://www.navieryacht.com/feed.xml
